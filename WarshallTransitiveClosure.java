@@ -22,8 +22,8 @@ public class WarshallTransitiveClosure {
         // Find the transitive closure using Warshall's Algorithm
         for (int k = 0; k < vertices; k++) {
             for (int i = 0; i < vertices; i++) {
-                for (int j = 0; j < vertices; j++) {
-                    graph[i][j] = graph[i][j] | (graph[i][k] & graph[k][j]);
+                for (int j = 0; j < vertices; j++){
+                    graph[i][j] = (graph[i][j]!=0) || ((graph[i][k]!=0) && (graph[k][j]!=0))?1:0;
                 }
             }
         }
