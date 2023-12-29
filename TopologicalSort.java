@@ -12,8 +12,8 @@ class TopologicalSort {
         }
     }
 
-    public void addEdge(int source, int destination) {
-        adjacencyList.get(source).add(destination);
+    public void addEdge(int src, int dest) {
+        adjacencyList.get(src).add(dest);
     }
 
     public void topologicalSort() {
@@ -31,14 +31,14 @@ class TopologicalSort {
         }
     }
 
-    private void topologicalSortUtil(int vertex, boolean[] visited, Stack<Integer> stack) {
-        visited[vertex] = true;
-        for (int neighbor : adjacencyList.get(vertex)) {
+    private void topologicalSortUtil(int ver, boolean[] visited, Stack<Integer> stack) {
+        visited[ver] = true;
+        for (int neighbor : adjacencyList.get(ver)) {
             if (!visited[neighbor]) {
                 topologicalSortUtil(neighbor, visited, stack);
             }
         }
-        stack.push(vertex);
+        stack.push(ver);
     }
 
     public static void main(String[] args) {
