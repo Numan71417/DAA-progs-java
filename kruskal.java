@@ -30,6 +30,7 @@ public class kruskal {
                     }
             i = find(u);
             j = find(v);
+            
             if (i != j) {
                 union(i, j);
                 System.out.println("(" + u + "," + v + ")" + "=" + a[u][v]);
@@ -44,14 +45,17 @@ public class kruskal {
     public static void main(String[] args) {
         int a[][] = new int[10][10];
         int i, j;
+
         System.out.println("Enter the number of vertices of the graph");
         Scanner sc = new Scanner(System.in);
         int n;
         n = sc.nextInt();
+
         System.out.println("Enter the wieghted matrix");
         for (i = 1; i <= n; i++)
             for (j = 1; j <= n; j++)
                 a[i][j] = sc.nextInt();
+
         kruskal k = new kruskal();
         k.krkl(a, n);
         sc.close();

@@ -22,9 +22,9 @@ public class KnapsackDP {
     public static void displayMatrix(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                System.out.print(matrix[i][j] + " ");
+                System.out.print(matrix[i][j] + "\t|\t");
             }
-            System.out.println();
+            System.out.println("\n");
         }
     }
 

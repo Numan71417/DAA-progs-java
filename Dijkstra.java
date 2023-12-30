@@ -33,24 +33,30 @@ public class Dijkstra {
         }
     }
 
-    void path(int v, int s) {
-        if (p[v] != -1)
-            path(p[v], s);
-        if (v != s)
-            System.out.print("->" + v + " ");
-    }
+    // void path(int v, int s) {
+    //     if (p[v] != -1)
+    //         path(p[v], s);
+    //     if (v != s)
+    //         System.out.print("->" + v + " ");
+    // }
 
     void display(int s, int n) {
-        int i;
-        for (i = 0; i < n; i++) {
+        System.out.println("Shortest paths from source vertex " + s + " are:");
+        for (int i = 0; i < n; i++) {
             if (i != s) {
-                System.out.print(s + " ");
-                path(i, s);
+                System.out.println(s+ " -> " + i + ": " + d[i] + " via " + p[i]);
             }
-            if (i != s)
-                System.out.print("=" + d[i] + " ");
-            System.out.println();
         }
+        // int i;
+        // for (i = 0; i < n; i++) {
+        //     if (i != s) {
+        //         System.out.print(s + " ");
+        //         path(i, s);
+        //     }
+        //     if (i != s)
+        //         System.out.print("=" + d[i] + " ");
+        //     System.out.println();
+        // }
     }
 
     public static void main(String[] args) {
@@ -76,6 +82,7 @@ public class Dijkstra {
         tr.dijk(a, s, n);
         System.out.println("the shortest path between source" + s + "to remaining vertices are");
         tr.display(s, n);
+        
 
         sc.close();
     }
